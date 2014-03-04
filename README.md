@@ -1,5 +1,11 @@
 vim_configuration
 ==================
 
-My vim commands, fonction and hotkeys.
-I am the author of ~5% of the file ;)
+My vim commands, fonctions, hotkeys and plugins.
+
+Install
+-------
+
+    git clone --recursive https://github.com/mat-tso/vim_configuration.git ~/.vim/
+	ln -s ~/.vim/vimrc .vimrc
+
