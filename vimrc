@@ -319,15 +319,19 @@ command! DiffSaved call s:DiffWithSaved()
 
 " Raccourcis clavier {{{1
 
+" set leader to ,
+let mapleader=" "
+let g:mapleader=" "
+
 " Vim 7 spell checker
 if has("spell")
-    setlocal spell spelllang=
-    " Language : FR
-    map ,lf :setlocal spell spelllang=fr<cr>
-    " Language : EN
-    map ,le :setlocal spell spelllang=en<cr>
-    " Language : Aucun
-    map ,ln :setlocal spell spelllang=<cr>
+	setlocal spell spelllang=
+	" Language : FR
+	map <leader>lf :setlocal spell spelllang=fr<cr>
+	" Language : EN
+	map <leader>le :setlocal spell spelllang=en<cr>
+	" Language : Aucun
+	map <leader>ln :setlocal spell spelllang=<cr>
 endif
 
 set spellsuggest=5
