@@ -360,4 +360,5 @@ command! -nargs=1 Grep silent execute "grep -He ".<f-args>." % " | redraw! | cw
 
 " }}}1
 
-"" vim:ai:et:sw=4:ts=4:sts=4:tw=78:fenc=utf-8:foldmethod=marker
+" Special option to edit this file
+"" vim:fileencoding=utf-8:foldmethod=marker
