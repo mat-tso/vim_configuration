@@ -19,7 +19,7 @@ scriptencoding utf-8
 " Options Internes {{{2
 
 " Mode non compatible avec Vi
-set nocompatible 
+set nocompatible
 
 " Le backspace
 set backspace=indent,eol,start
@@ -64,8 +64,8 @@ if filewritable($HOME. "/.vim/undo") == 2
 else
     if has("unix") || has("win32unix")
         call system("mkdir $HOME/.vim/undo -p")
-		set undodir=$HOME/.vim/undo
-		set undofile
+        set undodir=$HOME/.vim/undo
+        set undofile
     endif
 endif
 
@@ -100,7 +100,7 @@ endif
 set noautoread
 
 " Aucun son ou affichage lors des erreurs
-set errorbells 
+set errorbells
 set novisualbell
 set t_vb=
 
@@ -116,7 +116,7 @@ set laststatus=2
 
 " }}}2
 
-" Options de recherche {{{2 
+" Options de recherche {{{2
 
 " Tout ce qui concerne la recherche. Incrémentale
 " avec un highlight. Elle prend en compte la
@@ -208,7 +208,7 @@ highlight ColorColumn ctermbg=7
 
 " faire en sorte que le raccourci CTRL-X-F
 " marche même quand le fichier est après
-" le caractère égal. Comme : 
+" le caractère égal. Comme :
 " variable=/etc/<C-XF>
 set isfname-==
 
@@ -231,7 +231,7 @@ if has("autocmd")
         au!
         " Textwidth de 78 pour tous les fichiers texte
         "autocmd FileType text setlocal textwidth=78
-        
+
         " Remet la position du curseur comme elle était avant
         autocmd BufReadPost *
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -262,7 +262,7 @@ endif
 "  finish
 "endif
 "augroup git
-"  au! BufRead,BufNewFile COMMIT_MESSAGE		setfiletype git_commit
+"  au! BufRead,BufNewFile COMMIT_MESSAGE        setfiletype git_commit
 "augroup END
 
 " }}}1
@@ -328,13 +328,13 @@ map , :
 
 " Vim 7 spell checker
 if has("spell")
-	setlocal spell spelllang=
-	" Language : FR
-	map <leader>lf :setlocal spell spelllang=fr<cr>
-	" Language : EN
-	map <leader>le :setlocal spell spelllang=en<cr>
-	" Language : Aucun
-	map <leader>ln :setlocal spell spelllang=<cr>
+    setlocal spell spelllang=
+    " Language : FR
+    map <leader>lf :setlocal spell spelllang=fr<cr>
+    " Language : EN
+    map <leader>le :setlocal spell spelllang=en<cr>
+    " Language : Aucun
+    map <leader>ln :setlocal spell spelllang=<cr>
 endif
 
 set spellsuggest=5
