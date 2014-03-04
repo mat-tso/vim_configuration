@@ -375,6 +375,9 @@ execute pathogen#infect()
 
 map <leader>t :NERDTreeToggle<CR>
 
+map <leader>p :CtrlP<CR>
+map <leader>b :CtrlPBuffer<CR>
+
 " }}}1
 
 " Commandes {{{1
