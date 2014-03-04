@@ -157,6 +157,7 @@ set cursorline
 
 " Options folding
 set foldmethod=syntax
+set foldlevel=10
 
 " Un petit menu qui permet d'afficher la liste des éléments
 " filtrés avec un wildcard
@@ -388,4 +389,4 @@ command! -nargs=1 Grep silent execute "grep -He ".<f-args>." % " | redraw! | cw
 " }}}1
 
 " Special option to edit this file
-"" vim:fileencoding=utf-8:foldmethod=marker
+"" vim:fileencoding=utf-8:foldmethod=marker:foldlevel=0
