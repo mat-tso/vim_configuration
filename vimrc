@@ -327,6 +327,8 @@ let g:mapleader=" "
 " Alias , (comma) to : (colon)
 map , :
 
+map <F2> <C-]>
+
 " Vim 7 spell checker
 if has("spell")
     setlocal spell spelllang=
