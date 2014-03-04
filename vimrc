@@ -323,6 +323,9 @@ command! DiffSaved call s:DiffWithSaved()
 let mapleader=" "
 let g:mapleader=" "
 
+" Alias , (comma) to : (colon)
+map , :
+
 " Vim 7 spell checker
 if has("spell")
 	setlocal spell spelllang=
