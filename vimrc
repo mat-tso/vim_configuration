@@ -370,6 +370,8 @@ map <F3> :let @/=""<cr>
 
 " Les plugins Vim et leurs options {{{1
 
+" Load pathogen
+execute pathogen#infect()
 
 " }}}1
 
