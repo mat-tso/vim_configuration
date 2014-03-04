@@ -56,6 +56,19 @@ set history=100
 " undo, pour revenir en arrière
 set undolevels=150
 
+" => Turn persistent undo on
+" means that you can undo even when you close a buffer/VIM
+if filewritable($HOME. "/.vim/undo") == 2
+    set undodir=~/.vim/undo
+    set undofile
+else
+    if has("unix") || has("win32unix")
+        call system("mkdir $HOME/.vim/undo -p")
+		set undodir=$HOME/.vim/undo
+		set undofile
+    endif
+endif
+
 " Suffixes à cacher
 set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo
 
