@@ -381,6 +381,8 @@ map <leader>b :CtrlPBuffer<CR>
 
 map <leader>e :Tagbar<CR> 
 
+map <F5> :UpdateTag<CR>
+
 " }}}1
 
 " Commandes {{{1
