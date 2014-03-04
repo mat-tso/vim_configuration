@@ -373,6 +373,8 @@ map <F3> :let @/=""<cr>
 " Load pathogen
 execute pathogen#infect()
 
+map <leader>t :NERDTreeToggle<CR>
+
 " }}}1
 
 " Commandes {{{1
