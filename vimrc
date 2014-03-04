@@ -379,6 +379,8 @@ map <leader>t :NERDTreeToggle<CR>
 map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
+map <leader>e :Tagbar<CR> 
+
 " }}}1
 
 " Commandes {{{1
