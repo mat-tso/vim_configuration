@@ -346,6 +346,7 @@ map <leader>f :NERDTreeToggle<CR>
 
 map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
+map <leader>l :CtrlPMRUFiles<CR>
 
 map <leader>e :Tagbar<CR> 
 
