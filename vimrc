@@ -342,7 +342,7 @@ map <leader>w :w<cr>
 " Load pathogen
 execute pathogen#infect()
 
-map <leader>t :NERDTreeToggle<CR>
+map <leader>f :NERDTreeToggle<CR>
 
 map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
