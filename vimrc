@@ -282,7 +282,12 @@ let g:mapleader=" "
 " Alias , (comma) to : (colon)
 map , :
 
+" Tags
 map <F2> <C-]>
+map <leader><F2> g<C-]>
+
+map <A-left> :pop<cr>
+map <A-right> :tag<cr>
 
 " Vim 7 spell checker
 if has("spell")
