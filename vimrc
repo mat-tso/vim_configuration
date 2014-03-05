@@ -329,6 +329,9 @@ vmap <C-Down> :m '>+1<cr>'<V'>
 " Désactiver le highlight (lors d'une recherche par exemple)
 map <F3> :let @/=""<cr>
 
+" Completion
+imap <C-space> <C-N>
+
 " }}}1
 
 " Les plugins Vim et leurs options {{{1
