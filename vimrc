@@ -10,12 +10,15 @@ set nocompatible
 " Le backspace
 set backspace=indent,eol,start
 
-" Les Tabs
-set noet
-set sw=4
-set ts=4
-set sts=4
-set tw=79
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
 
 " Les fenêtres et onglets
 set splitright
