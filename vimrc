@@ -332,6 +332,9 @@ map <F3> :let @/=""<cr>
 " Completion
 imap <C-space> <C-N>
 
+" Fast save
+map <leader>w :w<cr>
+
 " }}}1
 
 " Les plugins Vim et leurs options {{{1
