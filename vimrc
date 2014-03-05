@@ -1,18 +1,4 @@
 scriptencoding utf-8
-"=============================================================================
-"
-" Fichier de configuration VIM personnalisé (meilleur pour la programmation,
-" raccourcis clavier utiles, etc. pour mieux profiter de cet excellent
-" éditeur).
-"
-" Auteur : Achraf cherti (aka Asher256)
-" Email  : achraf at cherti dot name
-"
-" Licence : GPL
-"
-" Site: http://achraf.cherti.name/
-"
-"=============================================================================
 
 " Options {{{1
 
