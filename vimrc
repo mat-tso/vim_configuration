@@ -348,7 +348,7 @@ map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 map <leader>l :CtrlPMRUFiles<CR>
 
-map <leader>e :Tagbar<CR> 
+map <leader>t :Tagbar<CR>
 
 map <F5> :UpdateTag<CR>
 
