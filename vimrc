@@ -208,52 +208,19 @@ set isfname-==
 
 " Autocmd {{{1
 
-set cindent
-"set autoindent
-"set smartindent
-
 if has("autocmd")
-    " Détection auto du format
-    " + activer indent
-    filetype plugin indent on
+    function! ResCur()
+        if line("'\"") <= line("$")
+            normal! g`"
+            return 1
+        endif
+    endfunction
 
-    augroup divers " {{{2
-        au!
-        " Textwidth de 78 pour tous les fichiers texte
-        "autocmd FileType text setlocal textwidth=78
-
-        " Remet la position du curseur comme elle était avant
-        autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
-
-        " La valeur des tabs par défaut
-        " autocmd BufNewFile,BufRead * call ChangeTabSize(4, 0)
-
-        " Ne pas faire de wrap dans les fichiers ChangeLog
-        " autocmd BufNewFile,BufRead ChangeLog set nowrap textwidth=0
-        " autocmd BufNewFile,BufRead ChangeLog call ChangeTabSize(8, 0)
-
-        " PKGBUILD
-        autocmd BufNewFile,BufRead PKGBUILD set syntax=sh
-    augroup END " }}}2
-
-    augroup pdf " {{{2
-        au!
-        autocmd BufReadPre *.pdf set ro
-        autocmd BufReadPost *.pdf %!pdftotext -nopgbrk "%" - | fmt -csw78
-    augroup END " }}}2
+    augroup resCur
+        autocmd!
+        autocmd BufWinEnter * call ResCur()
+    augroup END
 endif
-
-" Pour les messages de commit git, limiter les lignes à 70 chars
-" my filetype file
-"if exists("did_load_filetypes")
-"  finish
-"endif
-"augroup git
-"  au! BufRead,BufNewFile COMMIT_MESSAGE        setfiletype git_commit
-"augroup END
 
 " }}}1
 
