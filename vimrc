@@ -114,7 +114,15 @@ set incsearch
 set noignorecase
 set infercase
 
-set tags=$HOME/.vim/tags/tags,tags
+set tags+=./tags
+set tags+=tags
+set tags+=../tags
+set tags+=../../tags
+set tags+=../../../tags
+set tags+=../../../../tags
+set tags+=../../../../../tags
+set tags+=../../../../../../tags
+set tags+=../../../../../../../tags
 
 set completeopt=menu,longest,preview
 
@@ -351,6 +359,8 @@ map <leader>l :CtrlPMRUFiles<CR>
 map <leader>t :Tagbar<CR>
 
 map <F5> :UpdateTag<CR>
+
+let g:easytags_dynamic_files = 1
 
 " }}}1
 
