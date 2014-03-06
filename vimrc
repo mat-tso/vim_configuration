@@ -360,6 +360,7 @@ map <leader>t :Tagbar<CR>
 
 map <F5> :UpdateTag<CR>
 
+let g:easytags_include_members = 1
 let g:easytags_dynamic_files = 1
 
 " }}}1
