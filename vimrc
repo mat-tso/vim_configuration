@@ -114,15 +114,8 @@ set incsearch
 set noignorecase
 set infercase
 
-set tags+=./tags
-set tags+=tags
-set tags+=../tags
-set tags+=../../tags
-set tags+=../../../tags
-set tags+=../../../../tags
-set tags+=../../../../../tags
-set tags+=../../../../../../tags
-set tags+=../../../../../../../tags
+" Use the first tag file found in the ancestors folders
+set tags+=./tags;
 
 set completeopt=menu,longest,preview
 
