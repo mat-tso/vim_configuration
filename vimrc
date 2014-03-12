@@ -7,6 +7,9 @@ scriptencoding utf-8
 " Mode non compatible avec Vi
 set nocompatible
 
+" Détection auto du format + activer indet
+filetype plugin indent on
+
 " Le backspace
 set backspace=indent,eol,start
 
