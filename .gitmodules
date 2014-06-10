@@ -13,12 +13,9 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "bundle/easytags"]
-	path = bundle/easytags
-	url = https://github.com/mat-tso/vim-easytags.git
-[submodule "bundle/easytags_misc"]
-	path = bundle/easytags_misc
-	url = https://github.com/xolox/vim-misc.git
 [submodule "bundle/OmniCppComplete"]
 	path = bundle/OmniCppComplete
 	url = https://github.com/vim-scripts/OmniCppComplete.git
+[submodule "bundle/taghighlight"]
+	path = bundle/taghighlight
+	url = https://github.com/abudden/taghighlight-automirror.git
