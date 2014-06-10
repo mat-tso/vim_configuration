@@ -7,5 +7,7 @@ Install
 -------
 
     git clone --recursive https://github.com/mat-tso/vim_configuration.git ~/.vim/
-	ln -s ~/.vim/vimrc .vimrc
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/ctags ~/.ctags
+    ln -s ~/.vim/tmux ~/.tmux.conf
 
