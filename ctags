@@ -1,3 +1,7 @@
+--c-kinds=+p
 --c++-kinds=+p
---fields=+iaS
+--fields=+iaSl
 --extra=+q
+--tag-relative=no
+--exclude=.git
+--exclude=test
