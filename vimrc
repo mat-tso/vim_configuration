@@ -171,6 +171,10 @@ set statusline=%F%m:%l\ \/%L,%c%V\ %p%%
 " colors.
 highlight! link DiffText MatchParen
 
+" Show hidden tabs or trailing spaces
+set listchars=tab:>-,nbsp:?
+set list
+
 " }}}2
 
 " Options d'affichage GUI {{{2
