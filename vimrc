@@ -348,9 +348,9 @@ execute pathogen#infect()
 
 map <leader>f :NERDTreeToggle<CR>
 
-map <leader>p :CtrlP<CR>
-map <leader>b :CtrlPBuffer<CR>
-map <leader>l :CtrlPMRUFiles<CR>
+map <leader>st :CtrlP<CR>
+map <leader>sb :CtrlPBuffer<CR>
+map <leader>sl :CtrlPMRUFiles<CR>
 
 map <leader>t :Tagbar<CR>
 
