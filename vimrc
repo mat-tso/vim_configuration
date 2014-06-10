@@ -96,6 +96,9 @@ set errorbells
 set novisualbell
 set t_vb=
 
+" Match opening `<' and closing `>'
+set matchpairs+=<:>
+
 " Quand une fermeture de parenthèse est entrée par l'utilisateur,
 " l'éditeur saute rapidement vers l'ouverture pour montrer où se
 " trouve l'autre parenthèse. Cette fonction active aussi un petit
