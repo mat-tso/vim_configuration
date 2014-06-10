@@ -290,8 +290,8 @@ map , :
 map <F2> <C-]>
 map <leader><F2> g<C-]>
 
-map <A-left> :pop<cr>
-map <A-right> :tag<cr>
+noremap <A-left> :pop<cr>
+noremap <A-right> :tag<cr>
 
 " Vim 7 spell checker
 if has("spell")
