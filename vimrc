@@ -368,6 +368,8 @@ map <leader>st :CtrlPTag<CR>
 
 map <leader>t :Tagbar<CR>
 
+map <F5> :UpdateTypesFileOnly<CR>
+
 map <F2> :YcmCompleter GoTo<CR>
 map <leader><F2> :YcmCompleter GoToImprecise<CR>
 
