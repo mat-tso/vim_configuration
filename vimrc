@@ -373,6 +373,8 @@ map <F5> :UpdateTypesFileOnly<CR>
 map <F2> :YcmCompleter GoTo<CR>
 map <leader><F2> :YcmCompleter GoToImprecise<CR>
 
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " }}}1
 
 " Commandes {{{1
