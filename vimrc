@@ -293,11 +293,15 @@ let g:mapleader=" "
 map , :
 
 " Tags
-map <F2> <C-]>
-map <leader><F2> g<C-]>
+map <leader>jt <C-]>
+map <leader>jmt g<C-]>
 
-noremap <A-Left> :pop<cr>
-noremap <A-Right> :tag<cr>
+noremap <leader><Left> <C-o>
+noremap <leader><Right> <C-i>
+
+" Faster binding but does not always work, depending on terminal emulation
+noremap <A-Left> <C-o>
+noremap <A-Left> <C-i>
 
 " Vim 7 spell checker
 if has("spell")
@@ -313,8 +317,8 @@ endif
 set spellsuggest=5
 
 " Tabs
-map <tab> gt
-map <S-tab> gT
+map <leader><tab> gt
+map <leader><S-tab> gT
 
 " Sélectionner tout
 map <C-a> ggVG
@@ -363,6 +367,9 @@ map <leader>sl :CtrlPMRUFiles<CR>
 map <leader>st :CtrlPTag<CR>
 
 map <leader>t :Tagbar<CR>
+
+map <F2> :YcmCompleter GoTo<CR>
+map <leader><F2> :YcmCompleter GoToImprecise<CR>
 
 " }}}1
 
