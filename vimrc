@@ -245,7 +245,6 @@ endif
 
 " Highlight all instances of word under cursor, when idle. {{{3
 " Useful when studying strange source code.
-nnoremap <leader>ah :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 function! AutoHighlightToggle()
   let @/ = ''
   if exists('#auto_highlight')
@@ -345,6 +344,9 @@ imap <C-space> <C-N>
 
 " Fast save
 map <leader>w :w<cr>
+
+" Fast auto highlight toggle
+nnoremap <leader>ah :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
 " }}}1
 
