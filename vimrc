@@ -301,7 +301,7 @@ noremap <leader><Right> <C-i>
 
 " Faster binding but does not always work, depending on terminal emulation
 noremap <A-Left> <C-o>
-noremap <A-Left> <C-i>
+noremap <A-Right> <C-i>
 
 " Vim 7 spell checker
 if has("spell")
