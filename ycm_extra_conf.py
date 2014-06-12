@@ -24,11 +24,9 @@ ie. for the filepath /a/b/c/d/file
     or if /a/b/c/.compilation_commands.json exists and use it,
     ...
 
-All path must be absolute or relative to the .compilation_commands.json folder.
 """
 
-defaultFlags =
-    [
+defaultFlags = [
         '-Wall',
         '-Wextra',
         '-Werror',
@@ -55,7 +53,7 @@ def findClosestDatabase(filepath):
     raise OSError()
 
 
-class ParseError : Exception
+class ParseError (Exception):
     "Exception raised when ycm could not parse a database."
     pass
 
@@ -110,12 +108,12 @@ def makeRelativePathsInFlagsAbsolute(flags, workingDirectory):
 
     return newFlags
 
+def directoryOfThisScript():
+    return os.path.dirname(os.path.abspath(__file__))
 
 def findFlagsInDatabase(filepath):
 
     databasePath = findClosestDatabase(filepath)
-
-    relativeTo = os.path.dirname(database)
 
     database = ycm_core.CompilationDatabase(compilation_database_folder)
     if not database:
@@ -126,6 +124,7 @@ def findFlagsInDatabase(filepath):
     # Bear in mind that compilation_info.compiler_flags_ does NOT return a
     # python list, but a "list-like" StringVec object
     flags = list(compilationInfo.compiler_flags_)
+    relativeTo = compilationInfo.compiler_working_dir_
 
     return makeRelativePathsInFlagsAbsolute(flags, relativeTo)
 
@@ -133,6 +132,7 @@ def FlagsForFile(filepath, **kwargs):
     try:
         flags = findFlagsInDatabase(filepath)
     except Exception:
-        flags = defaultFlags
+        flags = makeRelativePathsInFlagsAbsolute(defaultFlags,
+                                                 directoryOfThisScript())
 
-  return {'flags': flags, 'do_cache': True}
+    return {'flags': flags, 'do_cache': True}
