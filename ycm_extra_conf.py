@@ -60,7 +60,7 @@ class DatabaseNotFound(YcmException): pass
 def findClosestDatabase(filepath, filename):
     """Find first existing {filepath}/.../{filename}"""
 
-    folder = os.path.dirname(filepath)
+    folder = os.path.abspath(os.path.dirname(filepath))
     rootTested = False
 
     while not rootTested:
