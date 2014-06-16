@@ -202,3 +202,7 @@ def getAbsoluteFlags(filename):
 
 def FlagsForFile(filepath, **kwargs):
     return {'flags': getAbsoluteFlags(filepath), 'do_cache': True}
+
+if __name__ == "__main__" :
+    import sys
+    print(FlagsForFile(sys.argv[1]))
