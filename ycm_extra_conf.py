@@ -1,5 +1,4 @@
 import os
-import ycm_core
 
 """
 Custom configuration for ycm
@@ -46,12 +45,21 @@ defaultFlags = [
 
 SOURCE_EXTENSIONS = ['.cpp', '.cxx', '.cc', '.c', '.m', '.mm']
 
+class YcmException(Exception):
+    """ Base class for all ycm config exceptions. """
+    pass
+
+class FlagsNotFound(YcmException): pass
+
 def isHeaderFile(filepath):
     extension = os.path.splitext(filepath)[1]
     return extension in ['.h', '.hxx', '.hpp', '.hh']
 
+class DatabaseNotFound(YcmException): pass
+
 def findClosestDatabase(filepath, filename):
     """Find first existing {filepath}/.../{filename}"""
+
     folder = os.path.dirname(filepath)
     rootTested = False
 
@@ -62,12 +70,9 @@ def findClosestDatabase(filepath, filename):
         rootTested = (folder == "/")
         folder = os.path.dirname(folder)
 
-    raise OSError("No %s found in %s ancestors" % (filename,filepath))
+    raise DatabaseNotFound("No %s found in %s ancestors" % (filename,filepath))
 
-
-class ParseError (Exception):
-    """Exception raised when ycm could not parse a database."""
-    pass
+class CompilationInfoNotFound(YcmException): pass
 
 def getCompilationInfoForFile(filepath, database):
     """
@@ -89,7 +94,7 @@ def getCompilationInfoForFile(filepath, database):
                 if compilationInfo.compiler_flags_:
                     return compilationInfo
 
-    raise LookupError("No flag found for %s in %s" % (filepath, database))
+    raise CompilationInfoNotFound("No flag found for %s in %s" % (filepath, database))
 
 
 def makeRelativePathsInFlagsAbsolute(flags, workingDirectory):
@@ -123,9 +128,15 @@ def makeRelativePathsInFlagsAbsolute(flags, workingDirectory):
 def directoryOfThisScript():
     return os.path.dirname(os.path.abspath(__file__))
 
+class ParseError (YcmException):
+    """Exception raised when ycm could not parse a database."""
+    pass
+
 def findFlagsInDatabase(filepath):
+
     databasePath = findClosestDatabase(filepath, compilationDatabaseFileName)
 
+    import ycm_core
     database = ycm_core.CompilationDatabase(databasePath)
     if not database:
         raise ParseError("No flag found for %s in %s" % (filepath, databasePath))
@@ -136,7 +147,7 @@ def findFlagsInDatabase(filepath):
     # python list, but a "list-like" StringVec object
     flags = list(compilationInfo.compiler_flags_)
     if not flags:
-        raise Exception("No flags for %s in database %s" % (filepath, databasePath))
+        raise FlagsNotFound("No flags for %s in database %s" % (filepath, databasePath))
 
     relativeTo = compilationInfo.compiler_working_dir_
 
@@ -148,39 +159,45 @@ def findFlagsInList(filepath):
     One flag per line, the first line being a PWD for relative path flags.
     """
     databasePath = findClosestDatabase(filepath, compilationFlagsListFileName)
-    with open(databasePath) as file:
-        lines = file.readlines()
-    return lines[0], lines[1:]
+    with open(databasePath, "r") as file:
+        lines = map(str.strip, file.readlines())
+    return lines[1:], lines[0]
 
-class AllFailed (Exception):
+def getDefaultFlags():
+    """ Return the default flags and the root folder of relative flag paths. """
+    if not defaultFlags: raise FlagsNotFound("No defaultFlags")
+    return defaultFlags, directoryOfThisScript()
+
+class AllFailed (YcmException):
     def __init__(self, exceptions): self.exceptions = exceptions
 
 def evaluates(functions,*arg):
-    exeptions = []
+    exceptions = []
     for function in functions:
         try:
             return function(*arg)
-        except Exception, ex:
+        except YcmException, ex:
             exceptions += ex
 
     raise AllFailed(exceptions)
 
-def getDefaultFlags():
-    if not defaultFlags: raise Exception("No defaultFlags")
-    return defaultFlags, directoryOfThisScript()
-
 def getFlags(filepath):
+    """
+    Return the flags for a filename and the root folder of relative flag paths.
+    Flags are search in CompilationDatabase, flag file and defaultFlags.
+    """
     try:
         return evaluates([
                 findFlagsInDatabase,
                 findFlagsInList,
-                lambda _ : getDefaultFlags
+                lambda _ : getDefaultFlags()
             ], filepath)
     except AllFailed, ex:
-        raise Exception("Could not find flags for %s: %s" %
+        raise FlagsNotFound("Could not find flags for %s: %s" %
                 (filepath, "; ".join(map(str, ex.exceptions))))
 
-def getAbsoluteFlag(filename):
+def getAbsoluteFlags(filename):
+    """ Return the flags for a filename, all path path absolute. """
     return makeRelativePathsInFlagsAbsolute(*getFlags(filename))
 
 def FlagsForFile(filepath, **kwargs):
