@@ -36,10 +36,11 @@ This file should contain the flags to provide to clang, separated by whitespaces
 The first line MUST ONLY contain the root path of all flags relative path.
 
 To generate flags on android:
-    mm -B 2>&1 |tee >(grep gcc-tool> compilation.cmd)
-    grep -Eoe '-[^ ]*( [^ ]*/[^ ]*)?' compilation.cmd |
-        grep -v -e '^-o' -e '^-MF' -e ' out/host/linux-x86/' |
-        sort -u | sed "i$ANDROID_ROOT"> flags
+    mm -B showcommands | grep g++ | head -n1 |
+        grep -Eoe ' -((isystem|I|iquote|include) *)?[^ ]*' |
+        sed -e 's/^ *//' |
+        grep -Eve '^-(o|MF)' -e ' out/' |
+        sort -u | sed "1i$ANDROID_BUILD_TOP" > .flags
 
 3) Hardcoded flags
 If all previous option fail, return <defaultFlags>
