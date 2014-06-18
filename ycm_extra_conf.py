@@ -41,7 +41,7 @@ To generate flags on android:
         sort -u | sed "i$ANDROID_ROOT"> flags
 
 3) Hardcoded flags
-If nothing
+If all previous option fail, return <defaultFlags>
 """
 
 compilationDatabaseFileName = ".compilation_commands.json"
