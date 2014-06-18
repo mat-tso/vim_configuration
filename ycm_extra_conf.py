@@ -31,8 +31,9 @@ ie. for the filepath /a/b/c/d/file
 2) context flag list
 If no compilation commands are found, the script uses for a .flags file
 in the ancestor folders.
-This file should contain the flags to provide to clang, one per line.
-The first line *MUST* contain the root path of all flags relative path.
+This file should contain the flags to provide to clang, separated by whitespaces
+(space, new lines, ...).
+The first line MUST ONLY contain the root path of all flags relative path.
 
 To generate flags on android:
     mm -B 2>&1 |tee >(grep gcc-tool> compilation.cmd)
@@ -171,8 +172,10 @@ def findFlagsInList(filepath):
     """
     databasePath = findClosestDatabase(filepath, compilationFlagsListFileName)
     with open(databasePath, "r") as file:
-        lines = map(str.strip, file.readlines())
-    return lines[1:], lines[0]
+        lines = file.readlines()
+        path = lines[0].strip()
+        flags = reduce(lambda x, y: x+y, map(str.split, lines[1:], []))
+    return flags, path
 
 def getDefaultFlags():
     """ Return the default flags and the root folder of relative flag paths. """
