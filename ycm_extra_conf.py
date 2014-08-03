@@ -151,7 +151,7 @@ def findFlagsInDatabase(filepath):
     import ycm_core
     database = ycm_core.CompilationDatabase(databasePath)
     if not database:
-        raise ParseError("No flag found for %s in %s" % (filepath, databasePath))
+        raise ParseError("Could not load database %s" % databasePath)
 
     compilationInfo = getCompilationInfoForFile(filepath, database)
 
@@ -159,8 +159,7 @@ def findFlagsInDatabase(filepath):
     # python list, but a "list-like" StringVec object
     flags = list(compilationInfo.compiler_flags_)
     if not flags:
-        raise FlagsNotFound("No flags for %s in database %s" %
-                (filepath, databasePath))
+        raise FlagsNotFound("No flags for " + filenpath + " in database " + databasePath)
 
     relativeTo = compilationInfo.compiler_working_dir_
 
