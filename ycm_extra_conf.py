@@ -93,7 +93,7 @@ def getCompilationInfoForFile(filepath, database):
     corresponding source file, if any. If one exists, the flags for that file
     should be good enough.
     """
-    if not IsHeaderFile(filepath):
+    if not isHeaderFile(filepath):
       return database.GetCompilationInfoForFile(filepath)
 
     basename = os.path.splitext(filepath)[0]
