@@ -204,7 +204,7 @@ def getFlags(filepath):
         return evaluates([
                 findFlagsInDatabase,
                 findFlagsInList,
-                lambda _ : getDefaultFlags()
+                #lambda _ : getDefaultFlags()
             ], filepath)
     except AllFailed, ex:
         raise FlagsNotFound("Could not find flags for %s: %s" %
