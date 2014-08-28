@@ -376,6 +376,9 @@ map <leader><F2> :YcmCompleter GoToImprecise<CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
+" Swap words
+noremap <leader>s :Flip 
+
 " }}}1
 
 " Commandes {{{1
