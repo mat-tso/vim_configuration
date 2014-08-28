@@ -292,6 +292,9 @@ let g:mapleader=" "
 " Alias , (comma) to : (colon)
 map , :
 
+" press tt to exit from insert mode:
+imap tt <Esc>
+
 " Tags
 map <leader>jt <C-]>
 map <leader>jmt g<C-]>
