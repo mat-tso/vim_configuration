@@ -22,3 +22,6 @@
 [submodule "bundle/flipwords"]
 	path = bundle/flipwords
 	url = https://github.com/mmahnic/vim-flipwords.git
+[submodule "bundle/file-line"]
+	path = bundle/file-line
+	url = https://github.com/bogado/file-line.git
