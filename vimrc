@@ -355,6 +355,18 @@ map <leader>w :w<cr>
 " Fast auto highlight toggle
 nnoremap <leader>ah :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
+" Toogle paste mode on paste event
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
 " }}}1
 
 " Les plugins Vim et leurs options {{{1
