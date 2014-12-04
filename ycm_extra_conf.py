@@ -159,7 +159,7 @@ def findFlagsInDatabase(filepath):
     # python list, but a "list-like" StringVec object
     flags = list(compilationInfo.compiler_flags_)
     if not flags:
-        raise FlagsNotFound("No flags for " + filenpath + " in database " + databasePath)
+        raise FlagsNotFound("No flags for " + filepath + " in database " + databasePath)
 
     relativeTo = compilationInfo.compiler_working_dir_
 
