@@ -384,6 +384,7 @@ Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'mmahnic/vim-flipwords', { 'on': 'Flip' }
 Plug 'bogado/file-line'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 map <leader>f :NERDTreeToggle<CR>
