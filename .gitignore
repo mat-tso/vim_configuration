@@ -1,4 +1,6 @@
 undo/
 backup/
 spell/
+plugged/
+.netrwhist
 ycm_extra_conf.pyc
