@@ -386,6 +386,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'mmahnic/vim-flipwords', { 'on': 'Flip' }
 Plug 'bogado/file-line'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 map <leader>f :NERDTreeToggle<CR>
