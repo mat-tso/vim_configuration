@@ -377,7 +377,8 @@ command PlugDl !wget --timestamping --directory-prefix ~/.vim/autoload
 " vim-plug section
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRUFiles', 'CtrlPTag'] }
+"Can not lazy load ctrlp otherwise files are not added to MRU
+Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --system-libclang --system-boost' }
