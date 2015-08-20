@@ -371,7 +371,7 @@ endfunction
 
 " Les plugins Vim et leurs options {{{1
 
-command PlugDl !wget --timestamping --directory-prefix ~/.vim/autoload
+command PlugUpgrade !wget --timestamping --directory-prefix ~/.vim/autoload
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " vim-plug section

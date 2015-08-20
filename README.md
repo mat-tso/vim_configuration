@@ -12,11 +12,11 @@ Install
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/ctags ~/.ctags
     ln -s ~/.vim/tmux  ~/.tmux.conf
-    vim +PlugDl +quit
+    vim +PlugUpgrade +quit
     vim +PlugUpdate +quit
 
 ### Minimal
 
     wget -O ~/.vimrc https://raw.githubusercontent.com/mat-tso/vim_configuration/master/vimrc
-    vim +PlugDl +quit
+    vim +PlugUpgrade +quit
     vim +PlugUpdate +quit
