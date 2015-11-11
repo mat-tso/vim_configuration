@@ -378,8 +378,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --system-libclang --system-boost' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py --clang-completer --system-libclang --system-boost' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py --clang-completer' }
 Plug 'mmahnic/vim-flipwords', { 'on': 'Flip' }
 Plug 'bogado/file-line'
 Plug 'tpope/vim-surround'
