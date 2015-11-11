@@ -53,6 +53,7 @@ defaultFlags = [
         '-Wall',
         '-Wextra',
         '-Werror',
+        '-std=c++14',
     ]
 
 SOURCE_EXTENSIONS = ['.cpp', '.cxx', '.cc', '.c', '.m', '.mm']
