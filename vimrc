@@ -294,6 +294,9 @@ let g:mapleader=" "
 " Alias , (comma) to : (colon)
 map , :
 
+" Replay last command
+map <leader>, @:
+
 " Tags
 map <leader>jt <C-]>
 map <leader>jmt g<C-]>
