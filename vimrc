@@ -196,7 +196,9 @@ if has("gui_running")
     map <S-Insert> <MiddleMouse>
 
     set mousehide " On cache la souris en mode gui
-    set ch=2 " ligne de commande dans deux ligne
+    "set ch=2 " ligne de commande dans deux ligne
+    set guioptions-=T " No toolbar
+    set guioptions-=r " no scroll bar
 endif
 
 " colore la 80e colonne
