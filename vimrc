@@ -380,6 +380,7 @@ Plug 'mmahnic/vim-flipwords', { 'on': 'Flip' }
 Plug 'bogado/file-line'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/Conque-GDB'
 call plug#end()
 
 map <leader>f :NERDTreeToggle<CR>
@@ -401,6 +402,8 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
 " Swap words
 noremap <leader>s :Flip 
+
+let g:ConqueGdb_Leader = '<leader>g'
 
 " }}}1
 
