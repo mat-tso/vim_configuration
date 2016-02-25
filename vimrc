@@ -414,6 +414,8 @@ let g:CCTreeKeyDepthMinus = '-'
 let g:CCTreeRecursiveDepth = 10
 let g:CCTreeMinVisibleDepth = 10
 
+let g:plug_timeout=120
+
 " }}}1
 
 " Commandes {{{1
