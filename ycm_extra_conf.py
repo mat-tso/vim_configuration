@@ -52,7 +52,6 @@ compilationFlagsListFileName = ".flags"
 defaultFlags = [
         '-Wall',
         '-Wextra',
-        '-Werror',
         '-std=c++14',
     ]
 
