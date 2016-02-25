@@ -381,6 +381,7 @@ Plug 'bogado/file-line'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Conque-GDB'
+"Plug 'hari-rangarajan/CCTree', { 'for': ['c', 'cpp'] }
 call plug#end()
 
 map <leader>f :NERDTreeToggle<CR>
@@ -404,6 +405,14 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 noremap <leader>s :Flip 
 
 let g:ConqueGdb_Leader = '<leader>g'
+let g:CCTreeKeyTraceForwardTree = '<leader>)' 
+let g:CCTreeKeyTraceReverseTree = '<leader>(' 
+let g:CCTreeKeyToggleWindow = '<leader>c' 
+let g:CCTreeKeyCompressTree = 'zs'     " Compress call-tree 
+let g:CCTreeKeyDepthPlus = '+' 
+let g:CCTreeKeyDepthMinus = '-'
+let g:CCTreeRecursiveDepth = 10
+let g:CCTreeMinVisibleDepth = 10
 
 " }}}1
 
