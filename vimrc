@@ -328,15 +328,6 @@ map <leader><S-tab> gT
 " Sélectionner tout
 map <C-a> ggVG
 
-" Copier (le gv c'est pour remettre le sélection)
-map <C-c> "+ygv
-
-" Couper
-map <C-x> "+x
-
-" Coller
-map <C-p> "+gP
-
 " Deplacer la sélection vers le haut/le bas
 map <C-Up> :m .-2<cr>
 map <C-Down> :m .+1<cr>
