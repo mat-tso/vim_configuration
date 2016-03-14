@@ -401,6 +401,8 @@ map <leader><F2> :YcmCompleter GoToImprecise<CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
+let g:ctrlp_custom_ignore = '\v[\/](build)$'
+
 " Swap words
 noremap <leader>s :Flip 
 
